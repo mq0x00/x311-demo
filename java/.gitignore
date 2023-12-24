@@ -1,0 +1,12 @@
+### IDEA ###
+.idea/*
+*.log
+*.iml
+*/target/*
+/target/*
+*/*.iml
+*/*.class
+/.gradle/
+log/*
+blog/*
+target/*

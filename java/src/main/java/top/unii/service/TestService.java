@@ -83,7 +83,7 @@ public class TestService {
         } else if (body.getMessageType().equals(RequestMessageTypeEnum.NOTICE.id)) {
             /*
                 通知消息，根据 noticeCode 状态码回应
-                1000收费成功 2000发红包成功 3000发红包失败-余额不足-对方账号风控
+                通知代码：SENDREDPACK.SUCCESS红包发送成功 SENDREDPACK.FAIL红包发送失败 CHARGE.SUCCESS收费成功
              */
             if ("CHARGE.SUCCESS".equals(body.getNoticeCode())) {
     
@@ -157,7 +157,7 @@ public class TestService {
                 // 响应一条html文本消息，消息将以URL链接的形式触达用户，用户需要点击URL链接查看消息详情。
                 if(body.getContentTrim().contains("富文本") || body.getContentTrim().contains("html")) {
                     // 内容长度限60000个字节以内（1个汉字占3个字节）
-                    return ReturnBody.html(body.getConversationId(), "<span style='color:red;'>当前时间：" + new Date() + "</span>");
+                    return ReturnBody.html(body.getConversationId(), "<span style='color:red;'>消息内容：" + new Date() + "</span>");
                     
                 } else {
                     // 响应字符串时间。

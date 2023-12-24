@@ -34,10 +34,10 @@ public class RelayRequestBody {
     /*
         以下 4个参数（noticeCode、noticeCode、transactionId、accountBalance）在 messageType为 notice通知的时候才会存在。
      */
-    // 通知代码 notice时 1000收费成功 2000发红包成功 3000发红包失败
+    // 通知代码：SENDREDPACK.SUCCESS红包发送成功 SENDREDPACK.FAIL红包发送失败 CHARGE.SUCCESS收费成功
     private String noticeCode;
     
-    // 通知文本 noticeCode = 1000收费成功 2000发红包成功 3000发红包失败-余额不足-对方账号风控
+    // 通知文本
     private String noticeText;
     
     // 交易订单号，由你响应的。
